@@ -1,4 +1,6 @@
-// singleton
+// object declear in 1. constructor and in 2. tempate letter
+
+// singleton = when ever we create object using constructor its called singleton
 // Object.create
 
 // object literals
@@ -20,7 +22,7 @@ const JsUser = {
 // console.log(JsUser.email)
 // console.log(JsUser["email"])
 // console.log(JsUser["full name"])
-// console.log(JsUser[mySym])
+console.log(JsUser[mySym])
 
 JsUser.email = "hitesh@chatgpt.com"
 // Object.freeze(JsUser)
