@@ -52,8 +52,34 @@ const users = [
     }
 ]
 users[1].email
-console.log(users);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(users);
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
+
+// Destructure object
+const course = {
+    courseName : " JS",
+    price: "1000",
+    courseInstructor: "Arup"
+}
+
+// course.courseInstructor  // dont use like that
+const {courseInstructor: inst} = course
+// console.log(inst);
+
+// API JSON
+// json format without name
+// {
+//     "name": "Arup",
+//     "courseName1": "javascript",
+//     "price": "free"
+// }
+
+// array format
+// [
+//     {},
+//     {},
+//     {}
+// ]
 
