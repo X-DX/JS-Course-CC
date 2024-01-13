@@ -40,3 +40,35 @@ function loginUserMessage(username = "sam"){
 
 // console.log(loginUserMessage("hitesh"))
 // console.log(loginUserMessage())
+
+// 3. REST operator
+function calculateCartPrice(...num1){
+    return num1
+}
+// console.log(calculateCartPrice(200, 400, 500, 1000, 5000));
+
+// 4. pass objects
+const user = {
+    username: 'Arup',
+    price: 100
+}
+function handleObject(anyobject)
+{
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+// handleObj(user)
+handleObject({
+    username: "sam",
+    price: 399
+})
+
+// 5. pass array
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue([200, 400, 500, 1000]));
