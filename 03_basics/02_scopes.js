@@ -14,6 +14,8 @@ if (true) {
     // console.log("INNER: ", a);  // print 10 not 300 
 }
 
+//2. Nested Scope
+
 function one(){
     const username = "hitesh"
 
@@ -21,10 +23,34 @@ function one(){
         const website = "youtube"
         console.log(username);
     }
-    // console.log(website);
+    // console.log(website); // block scope error
 
-     two()
+     two() 
+}
+// one()
 
+if (true) {
+    const username = "hitesh"
+    if (username === "hitesh") {
+        const website = " youtube"
+        // console.log(username + website);
+    }
+    // console.log(website); // same error block scope
 }
 
-// one()
+// console.log(username); // same error block scope
+
+// ++++++++++++++++++ interesting ++++++++++++++++++
+//hosting concept
+
+console.log(addone(5)) // its show output : 6, because here we normally declear a function
+
+function addone(num){
+    return num + 1
+}
+
+// addTwo(5) // show error , beacause here we store function value in varibale
+
+const addTwo = function(num){ // here function store in varibale i.e we called experssion
+    return num + 2
+}
