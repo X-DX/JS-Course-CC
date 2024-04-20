@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1, h2, p, ul, li{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-black">
+        <h1 id="title" class="heading">DOM Learning</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consequatur recusandae eaque esse sunt quis sequi, repellendus error nobis cum neque, ipsam nostrum velit. Cumque animi et ratione accusamus blanditiis.</p>
+        <h2 id="title" class="heading">DOM L2</h2>
+        <h2 id="title" class="heading">DOM L3</h2>
+        <h2 id="title" class="heading">DOM L4</h2>
+        
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+    </div>
+</body>
+<script>
+    // getElementById
+    // const heading = document.getElementById('title').id
+    // const heading = document.getElementById('title').className
+    // const heading = document.getElementById('title').getAttribute  //he have tell which attr we need
+    // const heading = document.getElementById('title').getAttribute('id')
+    // const heading = document.getElementById('title').getAttribute('class')
+    // const heading = document.getElementById('title').setAttribute('class', 'test') // its add, its always overwrite
+
+    //style
+    // const tittle = document.getElementById('title');
+    // tittle.style.backgroundColor = "green"
+    // tittle.style.padding = "15px"
+    // tittle.style.color = "black"
+    // tittle.style.borderRadius = "15px"
+    // console.log(tittle);
+
+    // how to add content
+    // tittle.textContent  // here its display the all content, no matter its hidden with css or not
+    // tittle.innerText    // here its display only which is only visiable 
+    // tittle.innerHTML     // here return the whole html tags 
+
+    // queryselector
+    // const  a = document.querySelector('h1')
+    // const  a = document.querySelector('#title')
+    // const  a = document.querySelector('.heading')
+    // console.log(a);
+
+    // const myUnOrderList = document.querySelector('li')
+    // const turnGreen = myUnOrderList;
+    // turnGreen.style.backgroundColor = "red"
+    
+    // querySelectorAll
+    // const b = document.querySelectorAll('h2')
+    // const b = document.querySelectorAll('li')  // this are not pure array, NodeList
+    // b[1].style.backgroundColor = "blue"
+    // console.log(b);
+
+    //forEach
+    // const b = document.querySelectorAll('li')
+    // b.forEach(function (item) {
+    //     item.style.color = "red"
+    // })
+
+    //getElementsByClassName
+    const c = document.getElementsByClassName('list-item') // no loop in prototype: no forEach, we need to convert html collection to array
+    const d = Array.from(c) // Array.from is convert html to array // when we can do any opration , map, filter, foreach, etc
+    d.forEach(function (item) {
+        item.style.color = "yellow"
+    })
+    console.log(d);
+    
+
+</script>
+</html>
