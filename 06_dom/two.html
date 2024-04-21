@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .parent{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thusday</div>
+    </div>
+</body>
+<script>
+     const parDiv = document.querySelector('.parent')
+    //  console.log(parDiv.children);
+    // console.log(parDiv.children[1].innerHTML);
+
+    //for loop, children
+    // for (let i = 0; i < parDiv.children.length; i++) {
+    //     console.log(parDiv.children[i].innerHTML);
+    // }
+    // parDiv.children[1].style.color="orange"
+
+    //firstElement (parent to child)
+    // const firEle = parDiv.firstElementChild
+    // const firEle = parDiv.lastElementChild
+
+    // child to parent
+    const childDiv = document.querySelector('.day')
+    const parEle = childDiv.parentElement // return the parent element
+    // console.log(childDiv.nextElementSibling);
+    // console.log(parEle)
+
+    console.log("NODES:", parDiv.childNodes);
+</script>
+</html>
