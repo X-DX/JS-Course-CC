@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1,h2, ul,li{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // add list: here problem is to append this DOM have travesed whole tree
+    // function addLanguage(langName)
+    // {
+    //     const li = document.createElement('li')
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector('.language').appendChild(li)
+    // }
+    // addLanguage("python")
+    // addLanguage("Java")
+
+    // Optimized way
+    function addOptiLang(langName)
+    {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li).style.color = "yellow"
+    }
+    addOptiLang("python")
+    addOptiLang("java")
+    addOptiLang("TypeSript")
+
+    //Edit
+    const editEle = document.querySelector('li:nth-child(2)')
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    editEle.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Arup<li>'
+
+    //remove
+    const lastLang = document.querySelector('li:first-child')
+    lastLang.remove();
+</script>
+</html>
