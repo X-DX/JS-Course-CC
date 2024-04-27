@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        ul, li, h2, a{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // events are run in sequely
+    // but some are expections like browser events
+
+    // dont use this method
+    // document.getElementById('owl').onclick = function (){
+    //     alert("olw")
+    // }
+
+    // use this method
+    // document.getElementById('owl').addEventListener('click', function(e){  // study event object e
+    //     console.log(e);
+    // }, false) 
+    // flase and true are: they are used for event propagation
+
+    // false is defualt
+    // study: type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // interview: clientX and Y, screenX and Y
+    // altKey, ctrKey, shiftKey, keyCode
+
+    // attachEvent() in internet Expoler
+    // jQuery = .oneventListner
+
+
+    // Event Propagation : 1. Event capturing and 2. Event bubbling (this is defualt one i.e false)
+    // which order the event will execute ? 
+    // Learn : https://www.geeksforgeeks.org/what-is-event-propagation-capturing-bubbling/
+
+    // the default use is false i.e Event bubbling
+    // document.getElementById().addEventListener('click', function(e){
+        
+    // }, false) 
+
+    // eg bubbling (inside to outside)
+    // document.getElementById('images').addEventListener('click', function(e){  // in this code only we call the parent parent part
+    //     console.log("clicked inside the ul");
+    // }, false) 
+
+    // document.getElementById('owl').addEventListener('click', function(e){  // here when we clicked on owl the, 1st print owl and then ul one.
+    //     console.log("clicked owl"); // the propagation from inside to outside is called bubbling
+    // }, false) 
+
+    // eg capturing (outside to inside )
+    // document.getElementById('images').addEventListener('click', function(e){  
+    //     console.log("clicked inside the ul");
+    // }, true )
+
+    // document.getElementById('owl').addEventListener('click', function(e){  
+    //     console.log("clicked owl"); 
+    // }, true)
+
+    // Stop Propagation : when we dont want to Propagation the events
+    // https://www.geeksforgeeks.org/what-is-stop-propagation-in-javascript/?ref=ml_lbp
+    // document.getElementById('images').addEventListener('click', function(e){  // in this code only we call the parent parent part
+    //     console.log("clicked inside the ul");
+    //     e.stopPropagation()
+    // }, false) 
+
+    // prevebtDefault
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google cliked");
+    // },false);
+
+    // project
+    // when we click image image will vasihed
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName == 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove(); // 1st way
+        }
+    })
+    // removeIt.parentNode.removeChaild(removeIt) // 2nd ways
+
+</script>
+</html>
