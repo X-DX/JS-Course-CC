@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Events part 2</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // set Intervel
+    // way 1
+    // setInterval(function(){
+    //     console.log("Arup", Date.now());
+    // },2000)
+
+    // way 2
+    // const sayDate = function(str){
+    //     console.log(str, Date.now());
+    // }
+    // setInterval(sayDate, 2000, "Hi Arup")
+
+    // way 3
+    const startTask = function(){
+        document.querySelector('h1').innerHTML = "Start"
+        document.querySelector('body').style.backgroundColor = 'green'
+        console.log("Started");
+    }
+
+    const stopTask = function(){
+        document.querySelector('h1').innerHTML = "Stop"
+        document.querySelector('body').style.backgroundColor = 'red'
+    }
+    // const clickStart = setInterval(startTask, 2000)
+
+    let start = null;
+
+    document.querySelector('#start').addEventListener('click', function(){
+        start = setInterval(startTask, 2000)
+    },false)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(start) 
+        document.querySelector('h1').innerHTML = "Stop"
+        document.querySelector('body').style.backgroundColor = 'red'
+        console.log("Stop");
+    },false)
+
+</script>
+</html>
