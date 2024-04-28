@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: #212121; color: rgb(94, 156, 210);">
+   <!-- 
+        Old way they use XMLHttpRequest
+        https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest  
+  -->
+  0	UNSENT	Client has been created. open() not called yet.<br>
+  1	OPENED	open() has been called.<br>
+  2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br>
+  3	LOADING	Downloading; responseText holds partial data.<br>
+  4	DONE	The operation is complete.<br>
+</body>
+<script>
+    // AjAX
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+    };
+    xhr.send();
+
+    // console: this is not core part of js, come from c++ (i.e console.cc)
+    //https://github.com/v8/v8
+    // https://github.com/v8/v8/blob/main/src/d8/d8-console.cc
+    // function is used i.e code is in c ++
+    // void D8Console::Log(const debug::ConsoleCallArguments& args,
+    //                 const v8::debug::ConsoleContext&) {
+    // WriteToFile(nullptr, stdout, isolate_, args);
+    // }
+
+
+</script>
+</html>
