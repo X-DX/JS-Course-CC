@@ -4,7 +4,8 @@
 // alert will not work, because we working in node js not in browser
 // alert("heelo"); 
 
-// 1. premetive Data type
+// 1. premetive Data type (predefined data type or in built data type)
+// (string, number, string, undefined, boolean, null, bigint, symbol)
 
 let empName = "Arup" // string
 
@@ -24,4 +25,8 @@ let state;
 
 console.table(typeof state);
 
-// object
+
+// The data types that are derived from primitive data types of the JavaScript language are known as non-primitive data types. 
+// It is also known as derived data types or reference data types.
+
+// object, array

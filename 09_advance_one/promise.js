@@ -1,30 +1,35 @@
-// promise
+// promise (it is object)
 // The Promise object represents the eventual completion (or failure) of an asynchronous operation 
 // and its resulting value
 // im simple term: what ever task we assigne its go to queue and when task is complete its notifiy
 // link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-// promise 3 stages: 1. Pending 
-                    //  2. fulfilled
-                    //  3. rejected
+// promise 3 stages: 
+                    // 1. Pending : initial state, neither fulfilled nor rejected.
+                    //  2. fulfilled: meaning that the operation was completed successfully.
+                    //  3. rejected: meaning that the operation failed.
 
 // create promise 
 //promise is an object representing the eventual completion or failure of an asynchronous operation. it come in es6
 // but before promise we use Q and BlueBird promise libraries
+
+
 // way 1
 const promiseOne = new Promise(function (resolve, reject) { // new promise (its take call back function)
     // Do an async task
-    // DB call, cryptography, network
+    // DB call, cryptography, network call, etc.
     setTimeout(function(){  
         console.log("Async task is compelete");
-        resolve()
+        resolve(); // call this to connect resolve to then
     }, 1000)
 });   
 
 // consume the promise
 promiseOne.then(function(){
-    console.log("promise consumed");
+    console.log("promise consumed"); // .then is connected to resolve
 })
+
+
 
 // way 2
 new Promise(function(resolve, reject){
@@ -33,10 +38,12 @@ new Promise(function(resolve, reject){
         resolve()
     }, 1000)
 }).then(function(){
-    console.log("Async 2 resolved s");
+    console.log("Async 2 resolved");
 })
 
-// way 3
+
+
+// way 3 (data from network)
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve(
@@ -51,6 +58,8 @@ const promiseThree = new Promise(function(resolve, reject){
 promiseThree.then(function(user){
     console.log(user);
 })
+
+
 
 // way 4
 const promiseFour = new Promise(function(resolve, reject){
@@ -79,6 +88,9 @@ promiseFour.then((user)=>{
 }).finally(function(){
     console.log("the Promise is either resolved or rejected");
 })
+
+
+
 
 // way 5
 const promiseFive = new Promise(function(resolve, reject){
@@ -121,8 +133,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
     return respone.json()
 })
 .then((data)=>{
-    console.log(data);
+    // console.log(data);
 })
 .catch((error)=>{
-    console.log(error);
+    // console.log(error);
 })
