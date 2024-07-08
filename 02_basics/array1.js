@@ -19,6 +19,8 @@ let fruits3 = ["Apple", "Banana", "Mango"];
 
 
 // ********** 3. Modifying Arrays *********
+// Mutating Methods : push(), pop(), shift(), unshift(), splice(), sort(), reverse()
+// Non - Mutating Method: concat(), slice(), map(), filter(), reduce()
 
 // a. Changing elements
 let fruits4 = ["Apple", "Banana", "Mango"];
@@ -40,17 +42,28 @@ courses1.unshift("Web Development");
 
 // d. removing element
 let courses2 = ["HTML", "CSS", "Javascript", "React", "Node.js"];
-console.log("Original Array: " + courses2);
+//console.log("Original Array: " + courses2); // HTML,CSS,Javascript,React,Node.js
 
-// Removes and returns the last element
-let lastElement = courses2.pop();
-// console.log("After Removed the last elements: " + courses2);
+    // Removes and returns the last element
+    let lastElement = courses2.pop();
+    // console.log("After Removed the last elements: " + courses2); // HTML,CSS,Javascript,React
 
-// Removes and returns the first element
-let firstElement = courses2.shift();
-// console.log("After Removed the First elements: " + courses2);
+    // Removes and returns the first element
+    let firstElement = courses2.shift();
+    //console.log("After Removed the First elements: " + courses2); // CSS,Javascript,React
 
-// Removes 2 elements starting from index 1
-courses2.splice(1, 2);
-// console.log("After Removed 2 elements starting from index 1: " + courses2);
+    // Removes 2 elements starting from index 1
+    courses2.splice(1, 2);
+    // console.log("After Removed 2 elements starting from index 1: " + courses2); // CSS
 
+// e. for and forEach loop
+    // for loop
+    let courses3 = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+    for (let i = 0; i < courses3.length; i++) {
+        // console.log(courses3[i])
+    }
+
+    // forEach loop
+    courses3.forEach(function myfunc(elements) {
+        // console.log(elements);
+    });
