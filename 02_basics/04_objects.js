@@ -80,7 +80,7 @@ users[1].email
 
 //! Destructure object
 
-// Destructuring assignment is used to unpack values from ann array, or properties from object into distinct variables.
+// Destructuring assignment is used to unpack values from an array, or properties from object into distinct variables.
 //? eg: 
 // let a = arr[0];
 // let b = arr[1];
