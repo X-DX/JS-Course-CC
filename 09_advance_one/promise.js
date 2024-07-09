@@ -1,20 +1,25 @@
-// promise (it is object)
-// The Promise object represents the eventual completion (or failure) of an asynchronous operation 
-// and its resulting value
-// im simple term: what ever task we assigne its go to queue and when task is complete its notifiy
-// link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+//! promise (it is object)
+//? The Promise object represents the eventual completion (or failure) of an asynchronous operation 
+//? and its resulting value
+//? im simple term: what ever task we assigne its go to queue(not complete now) and when task is complete its notifiy (complete in future)
+//* link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-// promise 3 stages: 
+//? promise 3 stages: 
                     // 1. Pending : initial state, neither fulfilled nor rejected.
                     //  2. fulfilled: meaning that the operation was completed successfully.
                     //  3. rejected: meaning that the operation failed.
 
-// create promise 
+//? create promise 
 //promise is an object representing the eventual completion or failure of an asynchronous operation. it come in es6
 // but before promise we use Q and BlueBird promise libraries
+//* https://stackoverflow.com/questions/34960886/are-there-still-reasons-to-use-promise-libraries-like-q-or-bluebird-now-that-we
+
+// maximu we see we consume the promise
+
+//! How to Create Promise
 
 
-// way 1
+// way 1 Create promise (object so we can use class i.e new keyword)
 const promiseOne = new Promise(function (resolve, reject) { // new promise (its take call back function)
     // Do an async task
     // DB call, cryptography, network call, etc.
@@ -46,7 +51,7 @@ new Promise(function(resolve, reject){
 // way 3 (data from network)
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
-        resolve(
+        resolve(                    // trying to pass this data to then()
             {
                 username : "Arup",
                 email : "test@gmail.com"
@@ -81,7 +86,7 @@ const promiseFour = new Promise(function(resolve, reject){
 
 promiseFour.then((user)=>{
     return user.username
-}).then((username)=>{
+}).then((username)=>{   // then() chaining
     console.log(username);
 }).catch(function(error){
     console.log(error);
