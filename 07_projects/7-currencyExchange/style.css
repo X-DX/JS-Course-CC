@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(135deg, #020000, #318261);
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    text-align: center;
+    animation: slideDown 1s ease-in-out;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.amount p,
+.from p,
+.to p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    color: #cccccc;
+    font-size: 1.2em;
+}
+
+input[type="text"] {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #1e90ff;
+    outline: none;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+select {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    transition: border 0.3s;
+    width: 70px;
+}
+
+select:focus {
+    border-color: #1e90ff;
+    outline: none;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.msg {
+    margin: 20px 0;
+    color: #ffffff;
+    font-size: 1.2em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+button {
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #1c7ed6;
+    transform: translateY(-2px);
+}
+
+button.exchanged {
+    background-color: #28a745;
+    transform: scale(1.1);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
