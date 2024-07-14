@@ -19,6 +19,27 @@ const person = {
 console.log(person.name); // Output: John
 person.greet(); // Output: Hello, my name is John
 
+// Creating an object using a factory function
+function createPerson(name, age) {
+    return {
+        name: name,
+        age: age,
+        greet: function() {
+            console.log(`Hello, my name is ${this.name}`);
+        }
+    };
+}
+
+const person11 = createPerson("Alice", 25);
+const person22 = createPerson("Bob", 35);
+
+// Accessing object properties and methods
+console.log(person11.name); // Output: Alice
+person11.greet(); // Output: Hello, my name is Alice
+
+console.log(person22.age); // Output: 35
+person22.greet(); // Output: Hello, my name is Bob
+
 
 // With Class Using Object
 // Defining a class
