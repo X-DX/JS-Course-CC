@@ -17,7 +17,9 @@
 // }
 // let myObj = new MyClass();
 
-// eg: Define Class
+// eg: 
+//Define Class
+
 class Person {
     // Constructor method
     constructor(name, age) {
@@ -68,7 +70,7 @@ console.log(Person.greet());    // Output: Hello!
 
 class Employee extends Person {
     constructor(name, age, jobTitle) {
-        super(name, age); // Call the constructor of the parent class
+        super(name, age); // Call the constructor of the parent class to access the parent properties and method
         this.jobTitle = jobTitle;
     }
 
