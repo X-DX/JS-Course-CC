@@ -1,18 +1,21 @@
 # javascript and classes
 - Yes, JavaScript does indeed have classes. JavaScript introduced the concept of classes in ECMAScript 2015 (also known as ES6). Classes in JavaScript are syntactical sugar over JavaScript's existing prototype-based inheritance. They provide a more familiar and convenient syntax for creating objects and dealing with inheritance.
 
-## OOP (Object-oriented programming)
-- its is an programming paradim
+- It important to note that javascript is primarily a prototype-based language.
+- JavaScript is a prototype-based language, meaning it uses prototypes for inheritance instead of classes.
+
+## OOP (Object-oriented programming) its is prototype based language
+- its is an programming paradim (proraming style)
 
 ## Object
-- collection of properties and methods
-- toLowerCase
+- object is a collection of properties(variable and const, etc) and methods (function..)
+- eg: toLowerCase, promise, etc.
 
 ## why use OOP
+- JavaScript is used for several reasons, primarily to enhance code organization, reuse, and maintainability. (Encapsulation, Reusability, Polymorphism, Abstraction, Maintainability and Scalability, Framework and Library Support, Real-World Modeling, )
 
 ## parts of OOP
-Object literal 
-
+Object literal, this are important points:
 - Constructor function
 - Prototypes
 - Classes
