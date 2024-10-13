@@ -1,4 +1,4 @@
-// object literal: it have collections, object (keys and values), methods.
+//! object literal: it have collections, object (keys and values), methods.
 const user = {
     username: "Arup",
     loginuser: 8,
@@ -16,7 +16,7 @@ const user = {
 // console.log(this); // {} empty (its change depends on platform, in browser this value is window)
 
 
-// constructor function
+//! constructor function
 // eg: const promiseOne = new Promise() , const date = new Date()
 // so, new keyword is a constructor function, its allows we can create multiple instances from one object literal only.
 function User2(username, loginCount, isLoggedIn){
