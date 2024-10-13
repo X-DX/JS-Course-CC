@@ -5,7 +5,7 @@
 - JavaScript is a prototype-based language, meaning it uses prototypes for inheritance instead of classes.
 
 ## OOP (Object-oriented programming) its is prototype based language
-- its is an programming paradim (proraming style)
+- its is an programming paradim (programming style or structure)
 
 ## Object
 - object is a collection of properties(variable and const, etc) and methods (function..)
@@ -15,7 +15,9 @@
 - JavaScript is used for several reasons, primarily to enhance code organization, reuse, and maintainability. (Encapsulation, Reusability, Polymorphism, Abstraction, Maintainability and Scalability, Framework and Library Support, Real-World Modeling, )
 
 ## parts of OOP
-Object literal, this are important points:
+- Object literal
+
+this are important keyword:
 - Constructor function
 - Prototypes
 - Classes
